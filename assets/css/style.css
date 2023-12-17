@@ -3,20 +3,35 @@
 }
 
 * { /* Reset margin and padding of elements to 0 */
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
 }
+
+/* Start Reset H1-6 Properties */
+    h1, h2, h3, h4, h5, h6 {
+        /* Default all heading elements to have left and right padding of .5rem or ~8px */
+        text-transform: uppercase;
+    }
+        h1 { font-size: 200%; }
+        h2 { font-size: 180%; }
+        h3 { font-size: 160%; }
+        h4 { font-size: 140%; }
+        h5 { font-size: 120%; }
+        h6 { font-size: 100%; }
+/* End Reset H1-6 Properties */
 
 body { 
     display: flex; /* Set display of the body to flex so other elements flow */
     flex-flow: row wrap; /* Default flex display to row and wrap boxes */
     gap: 1rem; /* Set default gap between flexbox objects */
     font-size: 16px;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
     flex: 0 0 100%; /* Use 100% of the body */
     background-color: #777;
+    padding: .5rem;
 }
 
 main {
@@ -29,7 +44,14 @@ aside {
     background-color: pink;
 }
 
+section {
+    padding: .5rem;
+}
+
 footer {
     flex: 0 0 100%; /* Use 100% of the body */
     background-color: #777;
+    text-align: center;
+    padding: .5rem;
+    color: white;
 }
