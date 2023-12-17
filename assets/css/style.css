@@ -10,6 +10,7 @@
     h1, h2, h3, h4, h5, h6 {
         /* Default all heading elements to have left and right padding of .5rem or ~8px */
         text-transform: uppercase;
+        padding-left: 1rem;
     }
         h1 { font-size: 200%; }
         h2 { font-size: 180%; }
@@ -19,6 +20,7 @@
         h6 { font-size: 100%; }
 /* End Reset H1-6 Properties */
 
+/* Start Page Structure */
 body { 
     display: flex; /* Set display of the body to flex so other elements flow */
     flex-flow: row wrap; /* Default flex display to row and wrap boxes */
@@ -31,7 +33,6 @@ body {
 header {
     flex: 0 0 100%; /* Use 100% of the body */
     background-color: #777;
-    padding: .5rem;
 }
 
 main {
@@ -44,14 +45,20 @@ aside {
     background-color: pink;
 }
 
-section {
-    padding: .5rem;
-}
-
 footer {
     flex: 0 0 100%; /* Use 100% of the body */
     background-color: #777;
     text-align: center;
-    padding: .5rem;
     color: white;
+    padding: auto;
 }
+/* End Page Structure */
+
+/* Start Page Styling */
+button {
+    font-size: inhert;
+    padding: 0rem 1rem;
+    font-size: 120%;
+    float: right;
+}
+/* End Page Styling */
