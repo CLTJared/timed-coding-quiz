@@ -1,5 +1,11 @@
+/* Color Scheme Variables */
 :root {
-    --text-color: black;
+    --sea-foam: #DAF7A6;
+    --orange-light: #FFC300;
+    --orange-warning: #FF5733;
+    --red: #C70039;
+    --wine: #900C3F;
+    --plum: #581845;
 }
 
 * { /* Reset margin and padding of elements to 0 */
@@ -10,7 +16,6 @@
     h1, h2, h3, h4, h5, h6 {
         /* Default all heading elements to have left and right padding of .5rem or ~8px */
         text-transform: uppercase;
-        padding-left: 1rem;
     }
         h1 { font-size: 200%; }
         h2 { font-size: 180%; }
@@ -22,43 +27,60 @@
 
 /* Start Page Structure */
 body { 
-    display: flex; /* Set display of the body to flex so other elements flow */
-    flex-flow: row wrap; /* Default flex display to row and wrap boxes */
-    gap: 1rem; /* Set default gap between flexbox objects */
     font-size: 16px;
-
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
-    flex: 0 0 100%; /* Use 100% of the body */
-    background-color: #777;
+    width: 100%;
 }
 
 main {
-    flex: 1 0 auto;
-    background-color: pink;
-}
-
-aside { 
-    flex: 0 0 200px;
-    background-color: pink;
+    width: 100%;
 }
 
 footer {
-    flex: 0 0 100%; /* Use 100% of the body */
-    background-color: #777;
+    width: 100%;
     text-align: center;
-    color: white;
-    padding: auto;
 }
 /* End Page Structure */
 
+
 /* Start Page Styling */
 button {
-    font-size: inhert;
     padding: 0rem 1rem;
     font-size: 120%;
-    float: right;
+    background-color: var(--plum);
+    color: white;
+    padding: .3rem;
+    border-radius: 8px;
+    margin: .3rem 0;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+button[name="question"] {
+    display: block;
+    background-color: var(--wine);
+    margin: .3rem 0;
+    padding: .5rem .8rem;
+}
+
+#gameBoard {
+    margin: auto;
+    width: 500px;
+}
+
+#gameQuestion {
+    border: 1px solid black;
+    padding: .5rem;
+    box-shadow: 2px 2px 5px black;
+}
+
+p {
+    font-weight: bolder;
+    font-size: 150%;
 }
 /* End Page Styling */
