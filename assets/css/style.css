@@ -33,6 +33,10 @@ body {
 
 header {
     width: 100%;
+    text-align: center;
+    line-height: 5rem;
+    background-color: var(--orange-light);
+    margin-bottom: 1rem;
 }
 
 main {
@@ -42,6 +46,7 @@ main {
 footer {
     width: 100%;
     text-align: center;
+    margin-top: 1rem;
 }
 /* End Page Structure */
 
@@ -55,6 +60,11 @@ button {
     padding: .3rem;
     border-radius: 8px;
     margin: .3rem 0;
+}
+
+button[disabled] {
+    text-decoration: line-through;
+    color: #777;
 }
 
 button:hover {
@@ -79,8 +89,17 @@ button[name="question"] {
     box-shadow: 2px 2px 5px black;
 }
 
+#timer {
+    float: right;
+}
+
 p {
     font-weight: bolder;
     font-size: 150%;
+}
+
+mark {
+    background-color: transparent;
+    color: var(--orange-warning);
 }
 /* End Page Styling */
