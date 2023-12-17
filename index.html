@@ -7,35 +7,39 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 <body>
+    <!-- Header Content Goes Here -->
     <header>
-        <!-- Header Content Goes Here -->
         <h1>Test Your Javascript Knowledge!</h1>
     </header>
-
+    <!-- Main Content Goes Here -->
     <main>
-        <!-- Main Content Goes Here -->
         <section id="gameBoard">
+            <button id="gameStart" data-hidden="false">Start Game</button>
             <!-- Game Board Area -->
-            <h3>Game Board <button id="gameStart">Start Game</button></h3>
             <div id="gameQuestion">
                 <!-- Elements will be added to this area for the game -->
+
+                <!-- To be removed before final submittion, used for determing spacing/color features -->
+                <p id="gameQuestionText">Dummy Question</p>
+                <button name="question" id="question1" data-index="1">1. Answer</button>
+                <button name="question" id="question2" data-index="2">2. Answer</button>
+                <button name="question" id="question3" data-index="3">3. Answer</button>
+                <!-- To be removed before final submittion, used for determing spacing/color features -->
             </div>
         </section>
-    </main>
 
-    <aside>
-        <!-- Extra Content Goes Here -->
+        <!-- Start Timer Information -->
         <section id="timer">
-            <!-- Holds Timer Information -->
             <h3>Timer</h3>
             <div id="gameTime">
-                <!-- Timer will be input here via javascript -->
+                
             </div>
         </section>
-    </aside>
-
+        <!-- End Timer Information -->
+    </main>
+    <!-- Extra Content Goes Here -->
+    <!-- Footer Content Goes Here -->
     <footer>
-        <!-- Footer Content Goes Here -->
         <h6>&copy;2023 - Jared Elliott </h6>
     </footer>
 </body>
