@@ -15,10 +15,16 @@
     <main>
         <section id="gameBoard">
             <button id="gameStart" data-hidden="false">Start Game</button>
+            <!-- Start Timer Information -->
+            <section id="timer">
+                <h3>Timer: <mark id="gameTime">30</mark></h3>
+            </section>
+            <!-- End Timer Information -->
+            
             <!-- Game Board Area -->
             <div id="gameQuestion">
                 <!-- Elements will be added to this area for the game -->
-
+                <h3>Coding Quiz Challenge</h3>
                 <!-- To be removed before final submittion, used for determing spacing/color features -->
                 <p id="gameQuestionText">Dummy Question</p>
                 <button name="question" id="question1" data-index="1">1. Answer</button>
@@ -27,20 +33,13 @@
                 <!-- To be removed before final submittion, used for determing spacing/color features -->
             </div>
         </section>
-
-        <!-- Start Timer Information -->
-        <section id="timer">
-            <h3>Timer</h3>
-            <div id="gameTime">
-                
-            </div>
-        </section>
-        <!-- End Timer Information -->
     </main>
     <!-- Extra Content Goes Here -->
     <!-- Footer Content Goes Here -->
     <footer>
         <h6>&copy;2023 - Jared Elliott </h6>
     </footer>
+
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
