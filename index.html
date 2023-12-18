@@ -17,7 +17,7 @@
             <button id="gameStart" data-hidden="false">Start Game</button>
             <!-- Start Timer Information -->
             <section id="timer">
-                <h3>Timer: <mark id="gameTime">30</mark></h3>
+                <h3>Timer: <mark id="gameTime">60</mark></h3>
             </section>
             <!-- End Timer Information -->
             
@@ -25,19 +25,21 @@
             <div id="gameQuestion">
                 <!-- Elements will be added to this area for the game -->
                 <h3>Coding Quiz Challenge</h3>
+                <p>Take this quiz to test your javascript knowledge! You'll have 30 seconds to answer 5 questions.</p>
                 <!-- To be removed before final submittion, used for determing spacing/color features -->
-                <p id="gameQuestionText">Dummy Question</p>
-                <button name="question" id="question1" data-index="1">1. Answer</button>
-                <button name="question" id="question2" data-index="2">2. Answer</button>
-                <button name="question" id="question3" data-index="3">3. Answer</button>
+                <p class="gameQuestionText">Dummy Question</p>
+                <button id="question1" data-index="1" data-type="question" data-answer="true">1. Answer 1</button>
+                <button id="question2" data-index="2" data-type="question" data-answer="false">2. Answer 12345</button>
+                <button id="question3" data-index="3" data-type="question" data-answer="false">3. Answer 123</button>
                 <!-- To be removed before final submittion, used for determing spacing/color features -->
             </div>
         </section>
+        <section id="gameMessage"></section>
     </main>
-    <!-- Extra Content Goes Here -->
+
     <!-- Footer Content Goes Here -->
     <footer>
-        <h6>&copy;2023 - Jared Elliott </h6>
+        <h6>&copy;2023 - Jared Elliott | <a href="#">View Scoreboard</a></h6>
     </footer>
 
     <script src="assets/javascript/game.js"></script>
