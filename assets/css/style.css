@@ -27,8 +27,10 @@
 
 /* Start Page Structure */
 body { 
-    font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* Sets default font size for elements in body to 16px */
+    font-size: 16px; 
+    /* Sets default font choices*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
 }
 
 header {
@@ -51,6 +53,7 @@ footer {
 /* End Page Structure */
 
 
+
 /* Start Page Styling */
 button {
     padding: 0rem 1rem;
@@ -63,24 +66,31 @@ button {
 }
 
 button[disabled] {
-    text-decoration: line-through;
-    color: #777;
+    background-color: #777;
+    color: #999;
 }
 
 button:hover {
     opacity: .9;
 }
 
-button[name="question"] {
+button[data-type="question"] {
     display: block;
     background-color: var(--wine);
     margin: .3rem 0;
     padding: .5rem .8rem;
 }
 
-#gameBoard {
+#gameBoard, #gameMessage {
     margin: auto;
     width: 500px;
+    min-height: 2rem;
+}
+
+#gameMessage {
+    margin-top: .5rem;
+    text-align: center;
+    vertical-align: baseline;
 }
 
 #gameQuestion {
@@ -93,7 +103,7 @@ button[name="question"] {
     float: right;
 }
 
-p {
+p.gameQuestionText {
     font-weight: bolder;
     font-size: 150%;
 }
