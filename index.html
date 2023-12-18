@@ -22,16 +22,19 @@
             <!-- End Timer Information -->
             
             <!-- Game Board Area -->
-            <div id="gameQuestion">
+            <div id="gameArea">
                 <!-- Elements will be added to this area for the game -->
-                <h3>Coding Quiz Challenge</h3>
-                <p>Take this quiz to test your javascript knowledge! You'll have 30 seconds to answer 5 questions.</p>
-                <!-- To be removed before final submittion, used for determing spacing/color features -->
-                <p class="gameQuestionText">Dummy Question</p>
-                <button id="question1" data-index="1" data-type="question" data-answer="true">1. Answer 1</button>
-                <button id="question2" data-index="2" data-type="question" data-answer="false">2. Answer 12345</button>
-                <button id="question3" data-index="3" data-type="question" data-answer="false">3. Answer 123</button>
-                <!-- To be removed before final submittion, used for determing spacing/color features -->
+                
+                <div id="gameStartMsg" style="display: block">
+                    <h3>Coding Quiz Challenge</h3>
+                    Try to answer the following javascript code-related questions with in the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</div>
+                <div id="gamePlayBoard" style="display: none">
+                    <!-- Javascript creates elements here -->
+                </div>
+                <div id="gameEndMsg" style="display: none"></div>
+                <div id="gameScoreboard" style="display: none">
+                    <h3>Scoreboard</h3>
+                </div>
             </div>
         </section>
         <section id="gameMessage"></section>
@@ -39,7 +42,7 @@
 
     <!-- Footer Content Goes Here -->
     <footer>
-        <h6>&copy;2023 - Jared Elliott | <a href="#">View Scoreboard</a></h6>
+        <h6>&copy;2023 - Jared Elliott | <button id="btnScoreboard">View Scoreboard</button></h6>
     </footer>
 
     <script src="assets/javascript/game.js"></script>

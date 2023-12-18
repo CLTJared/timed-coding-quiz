@@ -81,9 +81,19 @@ button[data-type="question"] {
     padding: .5rem .8rem;
 }
 
+#btnScoreboard {
+    background-color: transparent;
+    color: blue;
+    border: none;
+}
+
+#btnScoreboard:hover {
+    text-decoration: underline;
+}
+
 #gameBoard, #gameMessage {
     margin: auto;
-    width: 500px;
+    width: 700px;
     min-height: 2rem;
 }
 
@@ -93,7 +103,7 @@ button[data-type="question"] {
     vertical-align: baseline;
 }
 
-#gameQuestion {
+#gameArea {
     border: 1px solid black;
     padding: .5rem;
     box-shadow: 2px 2px 5px black;
