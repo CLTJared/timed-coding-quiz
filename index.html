@@ -23,8 +23,8 @@
             
             <!-- Game Board Area -->
             <div id="gameArea">
-                <!-- Elements will be added to this area for the game -->
-                
+                <div id="gameMessage"></div>
+                <!-- divs will be changed to display: block/none in javascript to show and hide based on part of game you're in -->
                 <div id="gameStartMsg" style="display: block">
                     <h3>Coding Quiz Challenge</h3>
                     Try to answer the following javascript code-related questions with in the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</div>
@@ -39,16 +39,16 @@
                     </ol>
                     <button id="reset-scoreboard">Reset Score</button>
                 </div>
-                <div id="gameMessage"></div>
             </div>
         </section>
     </main>
 
     <!-- Footer Content Goes Here -->
     <footer>
-        <h6>&copy;2023 - Jared Elliott | <button id="btnScoreboard">View Scoreboard</button></h6>
+        <h6>&copy;2023 - Jared Elliott | <button id="btnScoreboard" data-type="scoreboard-view">View Scoreboard</button></h6>
     </footer>
 
+    <!-- Add the javascript file containing game functionality -->
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>

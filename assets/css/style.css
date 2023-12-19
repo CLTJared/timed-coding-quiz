@@ -65,7 +65,7 @@ button {
     margin: .3rem 0;
 }
 
-button[disabled] {
+button:disabled,button[disabled] {
     background-color: #777;
     color: #999;
 }
@@ -81,10 +81,17 @@ button[data-type="question"] {
     padding: .5rem .8rem;
 }
 
-#btnScoreboard {
+button[data-type="scoreboard-view"] {
     background-color: transparent;
     color: blue;
     border: none;
+}
+
+button[data-type="scoreboard-view"]:disabled {
+    background-color: transparent;
+    color: #777;
+    border: none;
+    text-decoration: line-through;
 }
 
 #btnScoreboard:hover {
