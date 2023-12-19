@@ -34,6 +34,11 @@
                 <div id="gameEndMsg" style="display: none"></div>
                 <div id="gameScoreboard" style="display: none">
                     <h3>Scoreboard</h3>
+                    <form id="score-record"> 
+                        <p>Record your score!</p>
+                        <input id="score-initials" type="text" name="score-initials" pattern="[A-Za-z]"  />
+                        <input type="submit" name="score-submit" id="score-submit" disabled />
+                    </form>
                     <ol id="scoreboard-list">
                         <!-- Game scoreboard elements will go here -->
                     </ol>

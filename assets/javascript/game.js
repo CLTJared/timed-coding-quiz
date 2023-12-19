@@ -69,12 +69,19 @@ let quizQuestions = [
 
 // Reset board/game conditions
 function resetGame() {
-    gameTimer = 60;
+    //Reset all of the divs to hidden except for gamePlayingMsg div which contains the game elements when playing
     gameMsg.setAttribute("style","background-color: transparent");
+        gameMsg.innerHTML = '';
     gameStartMsg.setAttribute("style","display: none");
     gamePlayingMsg.setAttribute("style","display: block");
     gameEndMsg.setAttribute("style","display: none");
+    gameScoreBoard.setAttribute("style","display: none")
+
+    //Reset variables to default
+    gameTimer = 60;
     gameOver = false;
+    gameStarted = true;
+    currentQuestion = 0;
 }
 
 // Play the game
@@ -85,7 +92,6 @@ function playGame() {
 
     //Calls Reset Game Elements Function
     resetGame();
-    gameStarted = true;
     
     displayQuestion(quizQuestions[currentQuestion]);
 
@@ -175,7 +181,6 @@ function displayQuestion(qqCurrent) { //Builds out the prompt and each question 
     }
 }
 
-
 function displayScoreboard() {
     //Function is used to show the scoreboard to the user
     let scoreVisible = gameScoreBoard.getAttribute("style"); //get the style property on the scoreboard
@@ -206,8 +211,8 @@ function enterCredentials() {
     console.log("Enter Initials for Scoreboard");
 }
 
+
 //Set Event Listener to the Start Game button
 btnStart.addEventListener("click", playGame);
-
 //Set Event Listener for the scoreboard
 btnScore.addEventListener("click", displayScoreboard);
