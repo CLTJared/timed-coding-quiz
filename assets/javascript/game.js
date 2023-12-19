@@ -113,11 +113,13 @@ function playGame() {
         if (gameTimer <= 0 ) { // Checks if time ran out for game or somehow ran under 0
             btnStart.disabled = false;
             btnScore.disabled = false;
+            gameStarted = false;
 
             gamePlayingMsg.setAttribute("style","display: none");
             gameEndMsg.setAttribute("style","display: block");
-            gameEndMsg.textContent = "Time Ran Out!";
-            gameStarted = false;
+            gameEndMsg.textContent = "Time Ran Out! See a list of the scores";
+            
+            // [TODO] Add scoreboard
             clearInterval(playing);
         }
     }, 1000);
@@ -140,14 +142,6 @@ function answerQuestion(event) {
     currentQuestion++
     displayQuestion(quizQuestions[currentQuestion]);
 }
-
-//<button data-index="1" data-type="question">1. Answer 1</button>
-//When creating the loop for the questions container, these are some of the options.
-//function nextQuestion() {
-//    console.log(quizQuestions.length); // Verifying/logging the length of the object for sanity
-//    //quizQuestions.forEach((element) => displayQuestion(element)); //calls the displayQuestion function
-//    displayQuestion(quizQuestions[currentQuestion]);
-//}
 
 function displayQuestion(qqCurrent) { //Builds out the prompt and each question button
     if(currentQuestion > quizQuestions.length-1) { gameOver=true; return; } //Check if all questions gone
@@ -208,6 +202,7 @@ function displayScoreboard() {
 }
 
 function enterCredentials() {
+    // [TODO] Write functionality for entering credientials and storing
     console.log("Enter Initials for Scoreboard");
 }
 
