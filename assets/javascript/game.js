@@ -60,9 +60,9 @@ let quizQuestions = [
     },
     //Question 5
     {
-        prompt: 'Question 5',
-        options: ['a','b','c','d'],
-        answer: 'a',
+        prompt: 'If let x = 7, will the following statement be true or false? if(7==x) ',
+        options: ['True','False'],
+        answer: 'True',
     }
 ]
 
