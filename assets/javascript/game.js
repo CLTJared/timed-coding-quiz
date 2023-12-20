@@ -214,29 +214,38 @@ function displayScoreboard() {
 }
 
 function enterCredentials(event) {
+    //Prevent page from refreshing
     event.preventDefault();
+    //get value of the input box and trim off any extra spaces
     let gmrInitials = gameInitials.value.trim();
 
+    //Console log to validate what I think should be there
     console.log("Enter Initials for Scoreboard");
     console.log("Name: " + gmrInitials);
     console.log("Score: " + gameTimer);
 
+    //Checking if there is anything in the input box
     if(!gmrInitials) { console.log("Must enter something into box;"); return; }
 
-    //let tempScore = [];
-    //tempScore = JSON.parse(localStorage.getItem("JavaQuiz")) || [];
+    let existScores = [];
+    existScores = JSON.parse(localStorage.getItem("JavaQuiz"));
+    if(existScores  == null) {
+        existScores = [];
+    }
 
-    let userScore = {
+    //Creating array/object for 
+    let enterScore = {
         initials: gmrInitials,
         score: gameTimer
     };
 
-    //Set userScore to local storage
-    //console.log("Temp: " + typeof tempScore);
+    
+    console.log("Temp: " + typeof existScores);
 
-    //if(typeof tempScore == 'object') tempScore.push(userScore);
+    //if(typeof tempScore == 'object') tempScore.push(enterScore);
 
-    localStorage.setItem("JavaQuiz", JSON.stringify(userScore));
+    //Set enterScore to local storage
+    localStorage.setItem("JavaQuiz", JSON.stringify(enterScore));
     // console.log("HERE IS THE JSON");
     // console.log(tempScore);
     // console.log("HERE IS THE STRINGIFY");
