@@ -112,10 +112,10 @@ function playGame() {
                 btnStart.disabled = false;
                 btnScore.disabled = false;
 
-                gamePlayingMsg.setAttribute("style","display: none");
+                gamePlayingMsg.setAttribute("style","display: none"); //Hide the playing area/gameboard
                 gameMsg.textContent = "You have successfully answered all of the questions. Enter your Initials below: ";
-                gameScoreBoard.setAttribute("style","display: block");
-                gameScoreRecord.setAttribute("style", "display: block");
+                gameScoreBoard.setAttribute("style","display: block"); //Show the scoreboard
+                gameScoreRecord.setAttribute("style", "display: block"); //Show the form
                 btnRecord.disabled = false;
 
                 clearInterval(playing);
@@ -125,12 +125,11 @@ function playGame() {
         if (gameTimer <= 0 ) { // Checks if time ran out for game or somehow ran under 0
             btnStart.disabled = false;
             btnScore.disabled = false;
-            btnRecord.disabled = false;
             gameStarted = false;
 
-            gamePlayingMsg.setAttribute("style","display: none");
-            gameMsg.textContent = "Time Ran Out! See a list of the scores";
-            gameScoreBoard.setAttribute("style","display: block");
+            gamePlayingMsg.setAttribute("style","display: none"); //Hide the gameboard
+            gameMsg.textContent = "Time Ran Out! See scoreboard below."; //Set message text
+            gameScoreBoard.setAttribute("style","display: block"); //Show the scoreboard
             
             clearInterval(playing);
         }
