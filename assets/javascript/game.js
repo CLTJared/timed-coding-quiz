@@ -227,11 +227,11 @@ function enterCredentials(event) {
     //Checking if there is anything in the input box
     if(!gmrInitials) { console.log("Must enter something into box;"); return; }
 
-    let existScores = [];
-    existScores = JSON.parse(localStorage.getItem("JavaQuiz"));
-    if(existScores  == null) {
-        existScores = [];
-    }
+    // let existScores = [];
+    // existScores = JSON.parse(localStorage.getItem("JavaQuiz"));
+    // if(existScores  == null) {
+    //     existScores = [];
+    // }
 
     //Creating array/object for 
     let enterScore = {
@@ -240,7 +240,7 @@ function enterCredentials(event) {
     };
 
     
-    console.log("Temp: " + typeof existScores);
+    // console.log("Temp: " + typeof existScores);
 
     //if(typeof tempScore == 'object') tempScore.push(enterScore);
 
