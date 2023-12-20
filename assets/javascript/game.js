@@ -8,10 +8,10 @@ const gameBoard = document.getElementById("gameArea");    //For containing quest
 const gameStartMsg = document.getElementById("gameStartMsg"); 
 const gamePlayingMsg = document.getElementById("gamePlayBoard"); 
 const gameMsg = document.getElementById("gameMessage");   //For game status messages
-const gameScoreBoard = document.getElementById("gameScoreboard");
+const gameScoreBoard = document.getElementById("gameScoreboard"); //Scoreboard div
 const gameInitials = document.getElementById("score-initials"); //score-initials
 const gameScoreRecord = document.getElementById("score-record"); //Form to record scores and initials
-const gameScoreBoardList = document.getElementById("scoreboard-list");
+const gameScoreBoardList = document.getElementById("scoreboard-list"); //OL list to append new entries
 
 // Global Variables - Other
 let gameOver = false;
@@ -79,6 +79,7 @@ function resetGame() {
     gameStartMsg.setAttribute("style","display: none");
     gamePlayingMsg.setAttribute("style","display: block");
     gameScoreBoard.setAttribute("style","display: none")
+    gameScoreRecord.setAttribute("style","display: none")
 
     //Reset variables to default
     gameTimer = 60;
@@ -157,10 +158,11 @@ function answerQuestion(event) {
 function displayQuestion(qqCurrent) { //Builds out the prompt and each question button
     if(currentQuestion > quizQuestions.length-1) { gameOver=true; return; } //Check if all questions gone
 
-    //Sets some values for the 
+    //removes the gamePlayingMsg text
     gamePlayingMsg.innerHTML = '';
-    console.log(currentQuestion + " : " + quizQuestions.length);
+
     console.log(qqCurrent.prompt);
+    //dynamically creating p element containing prompt text
     let gamePrompt = document.createElement("p");
     gamePrompt.innerHTML = qqCurrent.prompt;
     gamePlayingMsg.append(gamePrompt);
