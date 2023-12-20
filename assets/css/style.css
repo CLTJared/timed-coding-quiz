@@ -126,6 +126,10 @@ p.gameQuestionText {
     font-size: 150%;
 }
 
+#scoreboard-list li {
+    margin-left: 1.5rem;
+}
+
 mark {
     background-color: transparent;
     color: var(--orange-warning);

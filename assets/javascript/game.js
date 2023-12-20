@@ -1,6 +1,8 @@
 // Global Variables - Elements
 const btnStart = document.getElementById("gameStart");    //For starting the game
 const btnScore = document.getElementById("btnScoreboard"); //For tracking scoreboard button
+const btnRecord = document.getElementById("score-submit"); // Record Score Button
+const btnReset = document.getElementById("reset-scoreboard"); //For tracking on Reset Button
 const timerCount = document.getElementById("gameTime");   //For tracking remaining time left
 const gameBoard = document.getElementById("gameArea");    //For containing questions in game area
 const gameStartMsg = document.getElementById("gameStartMsg"); 
@@ -8,6 +10,9 @@ const gamePlayingMsg = document.getElementById("gamePlayBoard");
 const gameEndMsg = document.getElementById("gameEndMsg");
 const gameMsg = document.getElementById("gameMessage");   //For game status messages
 const gameScoreBoard = document.getElementById("gameScoreboard");
+const gameInitials = document.getElementById("score-initials"); //score-initials
+const gameScoreRecord = document.getElementById("score-record"); //Form to record scores and initials
+const gameScoreBoardList = document.getElementById("scoreboard-list");
 
 // Global Variables - Other
 let gameOver = false;
@@ -89,6 +94,7 @@ function playGame() {
     //Disable the Start Game button
     btnStart.disabled = true;
     btnScore.disabled = true;
+    btnRecord.disabled = true;
 
     //Calls Reset Game Elements Function
     resetGame();
@@ -108,10 +114,11 @@ function playGame() {
                 btnScore.disabled = false;
 
                 gamePlayingMsg.setAttribute("style","display: none");
-                gameEndMsg.setAttribute("style","display: block");
-                gameEndMsg.textContent = "You have successfully answered all of the questions. Enter your Initials below: ";
+                gameMsg.textContent = "You have successfully answered all of the questions. Enter your Initials below: ";
+                gameScoreBoard.setAttribute("style","display: block");
+                gameScoreRecord.setAttribute("style", "display: block");
+                btnRecord.disabled = false;
 
-                enterCredentials();
                 clearInterval(playing);
             }
         }
@@ -119,13 +126,13 @@ function playGame() {
         if (gameTimer <= 0 ) { // Checks if time ran out for game or somehow ran under 0
             btnStart.disabled = false;
             btnScore.disabled = false;
+            btnRecord.disabled = false;
             gameStarted = false;
 
             gamePlayingMsg.setAttribute("style","display: none");
-            gameEndMsg.setAttribute("style","display: block");
-            gameEndMsg.textContent = "Time Ran Out! See a list of the scores";
+            gameMsg.textContent = "Time Ran Out! See a list of the scores";
+            gameScoreBoard.setAttribute("style","display: block");
             
-            // [TODO] Add scoreboard
             clearInterval(playing);
         }
     }, 1000);
@@ -206,13 +213,55 @@ function displayScoreboard() {
     }
 }
 
-function enterCredentials() {
-    // [TODO] Write functionality for entering credientials and storing
+function enterCredentials(event) {
+    event.preventDefault();
+    let gmrInitials = gameInitials.value.trim();
+
     console.log("Enter Initials for Scoreboard");
+    console.log("Name: " + gmrInitials);
+    console.log("Score: " + gameTimer);
+
+    if(!gmrInitials) { console.log("Must enter something into box;"); return; }
+
+    //let tempScore = [];
+    //tempScore = JSON.parse(localStorage.getItem("JavaQuiz")) || [];
+
+    let userScore = {
+        initials: gmrInitials,
+        score: gameTimer
+    };
+
+    //Set userScore to local storage
+    //console.log("Temp: " + typeof tempScore);
+
+    //if(typeof tempScore == 'object') tempScore.push(userScore);
+
+    localStorage.setItem("JavaQuiz", JSON.stringify(userScore));
+    // console.log("HERE IS THE JSON");
+    // console.log(tempScore);
+    // console.log("HERE IS THE STRINGIFY");
+    // console.log(JSON.stringify(tempScore));
+
+    let gameTemp = document.createElement("li");
+    gameTemp.innerHTML = "Initials: " + gameInitials.value + " | Score: " + gameTimer;
+    gameScoreBoardList.append(gameTemp);
+
+    gameScoreRecord.reset();
+    gameScoreRecord.setAttribute("style", "display: none;")
 }
 
+function resetScoreBoardList() {
+    //While function to loop through, true while there is a child element (li) in gameScoreBoardList (ol)
+    while (gameScoreBoardList.firstChild) {
+        gameScoreBoardList.removeChild(gameScoreBoardList.firstChild);
+      }
+}
 
 //Set Event Listener to the Start Game button
 btnStart.addEventListener("click", playGame);
 //Set Event Listener for the scoreboard
 btnScore.addEventListener("click", displayScoreboard);
+//Set Event Listener for the record score
+btnRecord.addEventListener("click", enterCredentials);
+//Set Event Listener for the reset scoreboard list
+btnReset.addEventListener("click", resetScoreBoardList);
