@@ -7,7 +7,6 @@ const timerCount = document.getElementById("gameTime");   //For tracking remaini
 const gameBoard = document.getElementById("gameArea");    //For containing questions in game area
 const gameStartMsg = document.getElementById("gameStartMsg"); 
 const gamePlayingMsg = document.getElementById("gamePlayBoard"); 
-const gameEndMsg = document.getElementById("gameEndMsg");
 const gameMsg = document.getElementById("gameMessage");   //For game status messages
 const gameScoreBoard = document.getElementById("gameScoreboard");
 const gameInitials = document.getElementById("score-initials"); //score-initials
@@ -79,7 +78,6 @@ function resetGame() {
         gameMsg.innerHTML = '';
     gameStartMsg.setAttribute("style","display: none");
     gamePlayingMsg.setAttribute("style","display: block");
-    gameEndMsg.setAttribute("style","display: none");
     gameScoreBoard.setAttribute("style","display: none")
 
     //Reset variables to default
@@ -199,7 +197,6 @@ function displayScoreboard() {
         //Making sure the proper div is showing on the page
         gameStartMsg.setAttribute("style","display: block");
         gamePlayingMsg.setAttribute("style","display: none");
-        gameEndMsg.setAttribute("style","display: none");
         gameScoreBoard.setAttribute("style","display: none");
     } else {
         //Changes the button text on the View/Hide Scoreboard button
@@ -208,7 +205,6 @@ function displayScoreboard() {
         //Making sure the proper div is showing on the page
         gameStartMsg.setAttribute("style","display: none");
         gamePlayingMsg.setAttribute("style","display: none");
-        gameEndMsg.setAttribute("style","display: none");
         gameScoreBoard.setAttribute("style","display: block");
     }
 }
